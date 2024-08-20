@@ -1,0 +1,112 @@
+Ipublic class Automovil {
+    private String marca;
+    private int modelo;
+    private int tipoCosbustible;
+    private int tipoAutomovil;
+    private double velocidadMaxima;
+    private String color;
+    private double velocidadActual;
+
+    public Automovil(String marca, int modelo, int tipoCosbustible, int tipoAutomovil, double velocidadMaxima, double velocidadActual, String color) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.tipoCosbustible = tipoCosbustible;
+        this.tipoAutomovil = tipoAutomovil;
+        this.velocidadMaxima = velocidadMaxima;
+        this.velocidadActual = velocidadActual;
+        this.color = color;
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    public int getModelo() {
+        return modelo;
+    }
+
+    public void setModelo(int modelo) {
+        this.modelo = modelo;
+    }
+
+    public int getTipoCosbustible() {
+        return tipoCosbustible;
+    }
+
+    public void setTipoCosbustible(int tipoCosbustible) {
+        this.tipoCosbustible = tipoCosbustible;
+    }
+
+    public double getVelocidadMaxima() {
+        return velocidadMaxima;
+    }
+
+    public void setVelocidadMaxima(double velocidadMaxima) {
+        this.velocidadMaxima = velocidadMaxima;
+    }
+
+    public int getTipoAutomovil() {
+        return tipoAutomovil;
+    }
+
+    public void setTipoAutomovil(int tipoAutomovil) {
+        this.tipoAutomovil = tipoAutomovil;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public double getVelocidadAdtual() {
+        return velocidadActual;
+    }
+
+    public void setVelocidadAdtual(double velocidadAdtual) {
+        this.velocidadActual = velocidadAdtual;
+    }
+
+    public void acelerar(double avanzar){
+        this.velocidadActual += avanzar;
+        if(this.velocidadActual > velocidadMaxima){
+            this.velocidadActual = velocidadMaxima;
+        }
+        System.out.println("Acelerando el vehiculo.......");
+        System.out.println("La velocidad actual es: " + this.velocidadActual +" Km/h");
+    }
+
+    public void desacelerar(double retroceder){
+        if(retroceder < 0){
+            this.velocidadActual -= 0;
+        }
+        else{
+            this.velocidadActual -= retroceder;
+        }
+
+        System.out.println("Retrocediendo el automovil.....");
+        System.out.println("La velocidad actual es: " + this.velocidadActual+" Km/h");
+    }
+
+    public void frenar(){
+        this.velocidadActual =0;
+
+        System.out.println("Frenando el automovil.....");
+        System.out.println("La velocidad actual es: " + this.velocidadActual+" Km/h");
+    }
+
+    public void calcularTiempoEstimado(double distancia){
+        double tiempo = 0;
+        tiempo = distancia / velocidadActual;
+    }
+
+    public String toString(){
+        return "Marca: " + marca + "\nModelo: " + modelo + "\nTipo de combustible: " + tipoCosbustible + "\nTipo de automovil: " + tipoAutomovil + "\nVelocidad maxima: " + velocidadMaxima +"\nColor: "+ color + "\nVelocidad actual: " + velocidadActual;
+    }
+}
